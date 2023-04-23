@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}" />
+  </head>
+
+  <body>
+    <div class="animated-background" id="blur">
+      <ul class="box-area">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <header>
+        <a class="logo">IR Project</a>
+      </header>
+      <form class="form" enctype="multipart/form-data" method="POST" action="/submit">
+        <p id="image">
+          <label for="id_image1">Reference Person</label>
+          <input
+            type="file"
+            name="image1"
+            accept="image/"
+            required=""
+            onchange="loadFile1(event)"
+            id="id_image1"
+            style="
+              background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+              border-radius: 15px;
+              font-size: 12px;
+              color: #fff;
+              border: none;
+              outline: none;
+              width: 175px;
+              height: 17px;
+              cursor: pointer;
+            "
+          />
+        </p>
+        <p id="out"><img id="output1" width="100px" height="200px" /></p>
+        <p id="image">
+          <label for="id_image2">Input Cloth</label>
+          <input
+            type="file"
+            name="image2"
+            accept="image/"
+            id="id_image2"
+            onchange="loadFile2(event)"
+            style="
+              background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+              border-radius: 15px;
+              font-size: 12px;
+              color: #fff;
+              border: none;
+              outline: none;
+              width: 175px;
+              height: 17px;
+              cursor: pointer;
+            "
+          />
+        </p>
+        <p id="out"><img id="output2" width="100px" height="200px" /></p>
+        <div class="radio-btns">
+          <label>
+            <input
+              type="radio"
+              id="model1-id"
+              name="t_model"
+              value="man"
+              required
+              id="id_t_model_1"
+            />
+            <label id="l1" for="id_t_model_1">Male</label><br />
+          </label>
+          <label>
+            <input
+              type="radio"
+              id="model2-id"
+              name="t_model"
+              value="women"
+              required
+              id="id_t_model_2"
+            />
+            <label id="l2" for="id_t_model_2">Female</label><br />
+          </label>
+        </div>
+        <button class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </body>
+  <script>
+    var loadFile1 = function (event) {
+      var image1 = document.getElementById("output1");
+      image1.src = window.URL.createObjectURL(event.target.files[0]);
+    };
+  </script>
+  <script>
+    var loadFile2 = function (event) {
+      var image2 = document.getElementById("output2");
+      image2.src = URL.createObjectURL(event.target.files[0]);
+    };
+  </script>
+</html>

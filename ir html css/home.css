@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+body
+{
+    display: flex;
+    height: 100%;
+    place-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background: linear-gradient(#2b1055, #7597de);
+}
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    background: #fff;
+    border-radius: 0px 0px 25px 25px;
+    box-shadow: 5px 5px 15px #111;
+}
+.logo
+{
+    color: #2b1055;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.animated-background
+{
+    width: 100%;
+    height: 100vh;
+}
+.box-area
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.box-area li
+{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    animation: animate 20s linear infinite;
+    bottom: -150px;
+}
+.box-area li:nth-child(1)
+{
+    left: 86%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+.box-area li:nth-child(2)
+{
+    left: 12%;
+    width: 30px;
+    height: 30px;
+    animation-delay: 1.5s;
+    animation-duration: 10s;
+}
+.box-area li:nth-child(3)
+{
+    left: 70%;
+    width: 100px;
+    height: 100px;
+    animation-duration: 5.5s;
+}
+.box-area li:nth-child(4)
+{
+    left: 42%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 15s;
+
+}
+.box-area li:nth-child(5)
+{
+    left: 65%;
+    width: 40px;
+    height: 40px;
+    animation-delay: 0s;
+
+}
+.box-area li:nth-child(6)
+{
+    left: 15%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3.5s;
+}
+@keyframes animate
+{
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+.form{
+    position: relative;
+    color: #fff;
+    display: flex;
+    place-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 50vw;
+    font-size: 18px;
+    border-radius: 15px;
+    height: 70%;
+    top: 22%;
+    left: 25%;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+.form::-webkit-scrollbar
+{
+    width: 10px;
+}
+.form::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+.form #image{
+    position: relative;
+    width: 200px;
+    margin-left: 40px;
+    font-weight: 100px;
+    font-size: 25px;
+}
+.form #output1{
+    border: 1px dashed #c2cdda;
+    border-radius: 10px;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
+    object-fit: fill;
+}
+.form #output2
+{
+    border: 1px dashed #c2cdda;
+    border-radius: 10px;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
+    object-fit: fill;
+}
+.rowg-3 a
+{
+    margin-left: 40px;
+}
+.radio-btns
+{
+    margin-left: 5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.radio-btns label
+{
+    position: relative;
+    margin: 5px;
+}
+.radio-btns label input
+{
+    cursor: pointer;
+}
+.radio-btns label #l1
+{
+    position: relative;
+    background: none;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 4px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    transition: 0.5s;
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+                2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+.radio-btns label #l1:hover
+{
+    transition: 0.5s;
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+                2px 2px 6px rgba(0, 0, 0, 0.8),
+                inset -2px -2px 10px rgba(255, 255, 255, 0.05),
+                inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+.radio-btns label input:checked ~ #l1
+{
+    color: #fff;
+    box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.1),
+                inset 2px 2px 6px rgba(0, 0, 0, 1);
+    text-shadow: 0 0 5px #fff,
+                0 0 20px #fff;
+}
+.radio-btns label #l2
+{
+    position: relative;
+    background: none;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 4px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    transition: 0.5s;
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+                2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+.radio-btns label #l2:hover
+{
+    transition: 0.5s;
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+                2px 2px 6px rgba(0, 0, 0, 0.8),
+                inset -2px -2px 10px rgba(255, 255, 255, 0.05),
+                inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+.radio-btns label input:checked ~ #l2
+{
+    color: #fff;
+    box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.1),
+                inset 2px 2px 6px rgba(0, 0, 0, 1);
+    text-shadow: 0 0 5px #fff,
+                0 0 20px #fff;
+}
+.submit-btn{
+    position: relative;
+    overflow: hidden;
+    border: 3px solid;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    color: #fff;
+    border-radius: 5px;
+    z-index: 1;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 25rem;
+}
+.submit-btn:hover
+{
+    cursor: pointer;
+    color: #7597de;
+    background: #fff;
+    transition: 0.5s all ease-in-out;
+}
